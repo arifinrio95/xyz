@@ -67,7 +67,7 @@ def generate_image_with_style(description, style):
     response = openai.Image.create(
         model="dall-e-3",
         prompt=f"Create a {style} style and extremely detailed with natural lighting and cinematic style in 4:3 ratio for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and cinematic in 4:3 ratio.",
-        size="1024x1792",
+        size="1792x1024",
         quality="hd",
         n=1
     )
