@@ -66,9 +66,9 @@ def get_image_description(base64_image):
 def generate_image_with_style(description, style):
     response = openai.Image.create(
         model="dall-e-3",
-        prompt=f"Create an image with {style} style and extremely detailed with natural lighting and cinematic for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and cinematic.",
+        prompt=f"Create an photo-like image with {style} style and extremely detailed with natural lighting and photo-cinematic for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and photo-cinematic.",
         size="1792x1024",
-        quality="standard",
+        quality="hd",
         n=1
     )
     image_url = response.data[0].url
