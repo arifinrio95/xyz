@@ -75,10 +75,11 @@ def generate_image_with_style(description, style):
     return image_url
 
 # Streamlit app
-st.title('GPT Vision and DALL·E Image Generator')
+st.title('Kid Sketch Realizer')
+st.subheader("Ubah gambar atau sketsa gambar putra/putri kesayangan bapak menjadi versi foto-realistis. Realisasikan imajinasi mereka. Pasang di ruang tamu dan spot-spot terbaik.")
 
 # File uploader allows user to add their own image
-uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("Upload foto gambar.", type=["png", "jpg", "jpeg"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
