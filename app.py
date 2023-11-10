@@ -68,7 +68,7 @@ def generate_image_with_style(description, style):
         model="dall-e-3",
         prompt=f"Create a {style} style and extremely detailed with natural lighting and cinematic style in 4:3 ratio for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and cinematic in 4:3 ratio.",
         size="1792x1024",
-        quality="hd",
+        quality="standard",
         n=1
     )
     image_url = response.data[0].url
