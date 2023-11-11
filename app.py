@@ -64,13 +64,22 @@ def get_image_description(base64_image):
 
 # Function to generate an image using DALL·E 3 API with the description
 def generate_image_with_style(description, style):
-    response = openai.Image.create(
+    if style = 'Logo':
+        response = openai.Image.create(
         model="dall-e-3",
-        prompt=f"Create an photo-like image with {style} style and extremely detailed with natural lighting and photo-cinematic for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and photo-cinematic.",
-        size="1792x1024",
+        prompt=f"Create 4-grid minimalist and aesthetic logo this description: {description}.",
+        size="1024x1024",
         quality="standard",
         n=1
     )
+    else:    
+        response = openai.Image.create(
+            model="dall-e-3",
+            prompt=f"Create an photo-like image with {style} style and extremely detailed with natural lighting and photo-cinematic for this description: {description}. Remember create in {style} style and extremely detailed with natural lighting and photo-cinematic.",
+            size="1792x1024",
+            quality="standard",
+            n=1
+        )
     image_url = response.data[0].url
     return image_url
 
@@ -90,7 +99,7 @@ if uploaded_file is not None:
     # Ask user for the desired style for image generation
     style = st.selectbox(
         'Which style would you like to apply?',
-        ('Photorealistic', 'Matte Painting', 'Anime', 'Ghibli', 'Pencil Sketch')
+        ('Photorealistic', 'Matte Painting', 'Anime', 'Ghibli', 'Pencil Sketch', Logo)
     )
 
     if st.button('Describe & Generate'):
