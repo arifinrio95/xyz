@@ -67,7 +67,7 @@ def generate_image_with_style(description, style):
     if style == 'Logo':
         response = openai.Image.create(
             model="dall-e-3",
-            prompt=f"Create 4-grid minimalist and aesthetic logo this description: {description}.",
+            prompt=f"Create 4 minimalist and aesthetic logo this description: {description}.",
             size="1024x1024",
             quality="standard",
             n=1
