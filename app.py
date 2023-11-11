@@ -64,7 +64,7 @@ def get_image_description(base64_image):
 
 # Function to generate an image using DALL·E 3 API with the description
 def generate_image_with_style(description, style):
-    if style = 'Logo':
+    if style == 'Logo':
         response = openai.Image.create(
         model="dall-e-3",
         prompt=f"Create 4-grid minimalist and aesthetic logo this description: {description}.",
