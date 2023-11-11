@@ -99,7 +99,7 @@ if uploaded_file is not None:
     # Ask user for the desired style for image generation
     style = st.selectbox(
         'Which style would you like to apply?',
-        ('Photorealistic', 'Matte Painting', 'Anime', 'Ghibli', 'Pencil Sketch', Logo)
+        ('Photorealistic', 'Matte Painting', 'Anime', 'Ghibli', 'Pencil Sketch', 'Logo')
     )
 
     if st.button('Describe & Generate'):
